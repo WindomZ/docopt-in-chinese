@@ -1,1 +1,1 @@
-# docopt-zh-cn
+# docopt-in-chinese
