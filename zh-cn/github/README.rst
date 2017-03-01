@@ -91,11 +91,11 @@ putting help message in the module docstrings.
 安装(Installation)
 ======================================================================
 
-使用 `pip <http://pip-installer.org>`_ 或者 简易安装::
+使用 `pip <http://pip-installer.org>`_ 实现简单安装::
 
     pip install docopt==0.6.2
 
-另外, 你可以只需把``docopt.py``文件拖入你的项目中 --它是独立可用的。
+另外一种安装方式, 你只需把``docopt.py``文件拖入你的项目中 --它是独立可用的。
 
 **docopt** 已经经过 Python 2.6, 2.7, 3.3, 3.4, 3.5 和 PyPy 的测试。
 
@@ -151,7 +151,7 @@ putting help message in the module docstrings.
     注意：当 ``docopt`` 设置为自动处理 ``-h``， ``--help`` 和 ``--version`` 选项时，
     你仍然需要在使用模式中输入它们才能生效。此外，也方便为你的用户了解如何使用。
 
-- ``options_first``　默认为 ``False``。如果设置为 ``True`` 将不允许混序选项和参数的位置。
+- ``options_first`` 默认为 ``False``。如果设置为 ``True`` 将不允许混序选项和参数的位置。
   也就是说在第一个参数后，所有内容将被解释为参数，即使看起来像选项。
   这可以严格兼容于POSIX，或者说你想要将参数分派给其他程序。
 
