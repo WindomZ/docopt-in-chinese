@@ -95,14 +95,14 @@ putting help message in the module docstrings.
 
     pip install docopt==0.6.2
 
-另外一种安装方式, 你只需把``docopt.py``文件拖入你的项目中 --它是独立可用的。
+另外一种安装方式，你只需把``docopt.py``文件拖入你的项目中 --它是独立可用的。
 
 **docopt** 已经经过 Python 2.6, 2.7, 3.3, 3.4, 3.5 和 PyPy 的测试。
 
 测试(Testing)
 ======================================================================
 
-你可用下列命令运行这些单元测试:
+你可用下列命令运行单元测试:
 
     python setup.py test
 
@@ -140,7 +140,7 @@ putting help message in the module docstrings.
   或者，你也可以提供一个字符串数组，例如 ``['--verbose', '-o', 'hai.txt']``。
 
 - ``help`` 默认为 ``True``，指定解析器是否应自动打印帮助消息（如 ``doc``），然后终止程序，
-  如果遇到 ``-h`` 或 ``--help`` 选项（这类选项应该存在于使用模式中，更多在下面）。
+  如果遇到 ``-h`` 或 ``--help`` 选项（选项应该存在于使用模式中，更多说明在下面）。
   如果要手动处理 ``-h`` 或 ``--help`` 选项（作为其他选项），需设置 ``help=False``。
 
 - ``version`` 默认为 ``None``，是指定程序版本的可选参数。
