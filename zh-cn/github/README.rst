@@ -174,7 +174,7 @@ putting help message in the module docstrings.
      '<x>': '100',           'shoot': False,
      '<y>': '150'}
 
-**Help message**格式
+Help message格式
 ======================================================================
 
 **Help message** 由2部分组成:
@@ -191,13 +191,13 @@ putting help message in the module docstrings.
     --quiet      print less text
     --verbose    print more text
 
-它们的格式如下所述；其他内容不再累述。
+它们的格式如下所述，其他内容不再累述。
 
 ``Usage pattern`` 格式
 ----------------------------------------------------------------------
 
-**Usage pattern** 是一个用 ``usage:``(不区分 *大小写*) 开头的 ``doc`` 字符串，而且以一个明显空行结束。
-小例子:
+**Usage pattern** 是一个用 ``usage:`` *(不区分大小写)* 开头的 ``doc`` 字符串，而且最下面以一个明显空行结束。
+这是个小例子:
 
 .. code:: python
 
@@ -205,8 +205,7 @@ putting help message in the module docstrings.
 
     """
 
-``usage:`` 后面的第一个单词作为你的程序名称。
-你可以多次指定程序名称来表示一系列唯一用法模式:
+``usage:`` 后面的第一个单词作为你的程序名称。你可以多次指定程序名称来表示一系列唯一用法模式:
 
 .. code:: python
 
@@ -219,7 +218,7 @@ putting help message in the module docstrings.
 
 - **<arguments>**, **ARGUMENTS**. 参数被指定为大写字母，例如: ``my_program.py CONTENT-PATH``
   或者由尖括号包围的词: ``my_program.py <content-path>``。
-- **--options**. 选项是由用破折号(``-``)起始单词，例如：``--output``, ``-o``。
+- **--options**. 选项是由用破折号(``-``)起始的单词，例如：``--output``, ``-o``。
   您可以 "堆叠" 几个单字母选项，例如：``-oiv``，这与 ``-o -i -v`` 相同。
   选项可以有参数，例如：``--input=FILE`` 或 ``-i FILE`` 甚至 ``-iFILE``。
   无论如何，指定选项说明可以具有一个参数，一个默认值，或指定同义选项的短/长单词（请参阅选项说明的下一部分）。
