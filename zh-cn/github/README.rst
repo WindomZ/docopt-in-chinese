@@ -174,7 +174,7 @@ putting help message in the module docstrings.
      '<x>': '100',           'shoot': False,
      '<y>': '150'}
 
-Help message格式
+``Help message`` 格式
 ======================================================================
 
 **Help message** 由2部分组成:

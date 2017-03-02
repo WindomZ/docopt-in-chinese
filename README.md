@@ -21,7 +21,7 @@
 
 #### [目录: ](https://github.com/WindomZ/docopt-in-chinese/tree/master/zh-cn)
 
-- [GitHub - README 中文翻译(完成10％)](https://github.com/WindomZ/docopt-in-chinese/tree/master/zh-cn/github/README.rst)
+- [GitHub - README 中文翻译(完成15％)](https://github.com/WindomZ/docopt-in-chinese/tree/master/zh-cn/github/README.rst)
 
 - [Website - HTML 中文翻译(完成0％)]()
 
