@@ -174,16 +174,16 @@ putting help message in the module docstrings.
      '<x>': '100',           'shoot': False,
      '<y>': '150'}
 
-Help message format
+**Help message**格式
 ======================================================================
 
-Help message consists of 2 parts:
+**Help message** 由2部分组成:
 
-- Usage pattern, e.g.::
+- ``Usage pattern`` 使用模式，例如::
 
     Usage: my_program.py [-hso FILE] [--quiet | --verbose] [INPUT ...]
 
-- Option descriptions, e.g.::
+- ``Option descriptions`` 选项说明，例如::
 
     -h --help    show this
     -s --sorted  sorted output
@@ -191,14 +191,13 @@ Help message consists of 2 parts:
     --quiet      print less text
     --verbose    print more text
 
-Their format is described below; other text is ignored.
+它们的格式如下所述；其他内容不再累述。
 
-Usage pattern format
+``Usage pattern`` 格式
 ----------------------------------------------------------------------
 
-**Usage pattern** is a substring of ``doc`` that starts with
-``usage:`` (case *insensitive*) and ends with a *visibly* empty line.
-Minimum example:
+**Usage pattern** 是一个用 ``usage:``(不区分 *大小写*) 开头的 ``doc`` 字符串，而且以一个明显空行结束。
+小例子:
 
 .. code:: python
 
@@ -206,9 +205,8 @@ Minimum example:
 
     """
 
-The first word after ``usage:`` is interpreted as your program's name.
-You can specify your program's name several times to signify several
-exclusive patterns:
+``usage:`` 后面的第一个单词作为你的程序名称。
+你可以多次指定程序名称来表示一系列唯一用法模式:
 
 .. code:: python
 
@@ -217,23 +215,16 @@ exclusive patterns:
 
     """
 
-Each pattern can consist of the following elements:
+每个模式可以由以下元素组成:
 
-- **<arguments>**, **ARGUMENTS**. Arguments are specified as either
-  upper-case words, e.g. ``my_program.py CONTENT-PATH`` or words
-  surrounded by angular brackets: ``my_program.py <content-path>``.
-- **--options**.  Options are words started with dash (``-``), e.g.
-  ``--output``, ``-o``.  You can "stack" several of one-letter
-  options, e.g. ``-oiv`` which will be the same as ``-o -i -v``. The
-  options can have arguments, e.g.  ``--input=FILE`` or ``-i FILE`` or
-  even ``-iFILE``. However it is important that you specify option
-  descriptions if you want your option to have an argument, a default
-  value, or specify synonymous short/long versions of the option (see
-  next section on option descriptions).
-- **commands** are words that do *not* follow the described above
-  conventions of ``--options`` or ``<arguments>`` or ``ARGUMENTS``,
-  plus two special commands: dash "``-``" and double dash "``--``"
-  (see below).
+- **<arguments>**, **ARGUMENTS**. 参数被指定为大写字母，例如: ``my_program.py CONTENT-PATH``
+  或者由尖括号包围的词: ``my_program.py <content-path>``。
+- **--options**. 选项是由用破折号(``-``)起始单词，例如：``--output``, ``-o``。
+  您可以 "堆叠" 几个单字母选项，例如：``-oiv``，这与 ``-o -i -v`` 相同。
+  选项可以有参数，例如：``--input=FILE`` 或 ``-i FILE`` 甚至 ``-iFILE``。
+  无论如何，指定选项说明可以具有一个参数，一个默认值，或指定同义选项的短/长单词（请参阅选项说明的下一部分）。
+- **commands** 都是不遵循上述 ``--options`` 或 ``<arguments>`` 或 ``ARGUMENTS`` 的约定，
+  附加上两个特殊命令：单破折号 "``-``" 和双破折号 "``--``"（见下文）。
 
 Use the following constructs to specify patterns:
 
