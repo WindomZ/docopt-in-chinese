@@ -44,7 +44,7 @@ command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
 一定不行！您知道什么是真棒吗？是当解析器 *是通过* 您自己写的 *漂亮的* 帮助消息(``help messages``)来自动生成的时候！
 这种方式您不在需要写那些愚蠢的可重复的解析器代码，而是只需写帮助消息(``help messages``) -- *您想要的方式*。
 
-**docopt** 帮助您*轻松*创建最美丽的命令行界面：
+**docopt** 帮助您 *轻松* 创建最美丽的命令行界面：
 
 .. code:: python
 
@@ -76,7 +76,7 @@ command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
 完胜！选项解析器基于上面的文档字符串(``docstrings``)生成，并传递给 ``docopt`` 方法。
 ``docopt`` 解析使用模式(``"usage pattern"``)(``"Usage: ..."``)和选项描述(``option descriptions``)(以 "``-``" 开头的行)，
 并确保程序调用与使用模式(``"usage pattern"``)相匹配；能基于它来解析选项，参数和命令。
-这一切的基本想法是 *一个好的帮助消息(``help messages``)包含所有必要信息，从而生成一个解析器。*
+这一切的基本想法是 *一个好的帮助消息包含所有必要信息，从而生成一个解析器。*
 
 所以，`PEP 257 <http://www.python.org/dev/peps/pep-0257/>`_
 建议将帮助消息(``help messages``)放在模块文档字符串(``docstrings``)中。
@@ -88,7 +88,7 @@ command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
 
     pip install docopt==0.6.2
 
-另外一种安装方式，您只需把``docopt.py``文件拖入您的项目中 --它是独立可用的。
+另外一种安装方式，您只需把 ``docopt.py`` 文件拖入您的项目中 --它是独立可用的。
 
 **docopt** 已经经过 Python 2.6, 2.7, 3.3, 3.4, 3.5 和 PyPy 的测试。
 
