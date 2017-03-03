@@ -151,8 +151,8 @@ putting help message in the module docstrings.
     注意：当 ``docopt`` 设置为自动处理 ``-h``， ``--help`` 和 ``--version`` 选项时，
     你仍然需要在使用模式中输入它们才能生效。此外，也方便为你的用户了解如何使用。
 
-- ``options_first`` 默认为 ``False``。如果设置为 ``True`` 将不允许混序选项和参数的位置。
-  也就是说在第一个参数后，所有内容将被解释为参数，即使看起来像选项。
+- ``options_first`` 默认为 ``False``。如果设置为 ``True`` 将不允许混序选项和位置参数。
+  也就是说在第一个位置参数后，所有内容将被解释为参数，即使看起来像选项。
   这可以严格兼容于POSIX，或者说你想要将参数分派给其他程序。
 
 **return** 的值是一个包含选项，参数和命令作为键的简单字典，准确拼写你的帮助消息。
@@ -225,55 +225,38 @@ putting help message in the module docstrings.
 - **commands** 都是不遵循上述 ``--options`` 或 ``<arguments>`` 或 ``ARGUMENTS`` 的约定，
   附加上两个特殊命令：单破折号 "``-``" 和双破折号 "``--``"（见下文）。
 
-Use the following constructs to specify patterns:
+使用以下构造来指定模式:
 
-- **[ ]** (brackets) **optional** elements.  e.g.: ``my_program.py
-  [-hvqo FILE]``
-- **( )** (parens) **required** elements.  All elements that are *not*
-  put in **[ ]** are also required, e.g.: ``my_program.py
-  --path=<path> <file>...`` is the same as ``my_program.py
-  (--path=<path> <file>...)``.  (Note, "required options" might be not
-  a good idea for your users).
-- **|** (pipe) **mutually exclusive** elements. Group them using **(
-  )** if one of the mutually exclusive elements is required:
-  ``my_program.py (--clockwise | --counter-clockwise) TIME``. Group
-  them using **[ ]** if none of the mutually-exclusive elements are
-  required: ``my_program.py [--left | --right]``.
-- **...** (ellipsis) **one or more** elements. To specify that
-  arbitrary number of repeating elements could be accepted, use
-  ellipsis (``...``), e.g.  ``my_program.py FILE ...`` means one or
-  more ``FILE``-s are accepted.  If you want to accept zero or more
-  elements, use brackets, e.g.: ``my_program.py [FILE ...]``. Ellipsis
-  works as a unary operator on the expression to the left.
-- **[options]** (case sensitive) shortcut for any options.  You can
-  use it if you want to specify that the usage pattern could be
-  provided with any options defined below in the option-descriptions
-  and do not want to enumerate them all in usage-pattern.
-- "``[--]``". Double dash "``--``" is used by convention to separate
-  positional arguments that can be mistaken for options. In order to
-  support this convention add "``[--]``" to your usage patterns.
-- "``[-]``". Single dash "``-``" is used by convention to signify that
-  ``stdin`` is used instead of a file. To support this add "``[-]``"
-  to your usage patterns. "``-``" acts as a normal command.
+- **[ ]** (中括号) **可选** 元素。例如： ``my_program.py [-hvqo FILE]``
+- **( )** (小括号) **必选** 元素。所有 *未* 放在 **[ ]** 中的元素也是必需的。例如：
+  ``my_program.py --path=<path> <file>...`` 与 ``my_program.py (--path=<path> <file>...)`` 相同。
+  （注意， "required options" 对于使用者来说可能不是一个好用法）。
+- **|** (竖) **互斥** 元素。 如果需要互斥元素至少实现一个，则使用 **( )** 分组：
+  ``my_program.py (--clockwise | --counter-clockwise) TIME``。
+  如果不需要互斥元素都实现，则使用 **[ ]** 对它们进行分组：
+  ``my_program.py [--left | --right]``。
+- **...** (省略号) **一个或多个** 元素。指定可以接受任意数量的重复元素，
+  用省略号(``...``)，例如： ``my_program.py FILE ...`` 意思是接受一个或多个 ``FILE``。
+  如果想要接受零个或多个元素，请用中括号(``[ ]``)，例如： ``my_program.py [FILE ...]``。
+  省略号(``...``)放在表达式的左边作为一个一元运算符。
+- **[options]** (区分大小写) 任意选项的快捷方式。
+  如果在使用模式的选项描述中要指定可以提供任意已定义的选项，而不想在此都一一申明出来，就可以使用 **[options]**。
+- "``[--]``". 双短线 "``--``" 按约定用于来区分位置参数而不会被误认为是选项。要支持这个约定，在你的使用模式中添加 "``[--]``"。
+- "``[-]``". 单短线 "``-``" 按约定用于表示 ``stdin`` 而不是文件。要支持这个约定，请在您的使用模式中添加 "``[-]``"。
+  "``-``"作为正常命令。
 
-If your pattern allows to match argument-less option (a flag) several
-times::
+如果你的模式允许匹配几次无参数选项（一个标志）::
 
     Usage: my_program.py [-v | -vv | -vvv]
 
-then number of occurrences of the option will be counted. I.e.
-``args['-v']`` will be ``2`` if program was invoked as ``my_program
--vv``. Same works for commands.
+那么将计算选项的出现次数。也就是说 ``my_program -vv`` 返回的字典内容中 ``args['-v']`` 等于 ``2``，这同样适用于命令。
 
-If your usage patterns allows to match same-named option with argument
-or positional argument several times, the matched arguments will be
-collected into a list::
+如果您的使用模式允许多次匹配同名的选项和选项参数，或同名的位置参数，这些匹配的参数将被收集到一个列表中::
 
     Usage: my_program.py <file> <file> --path=<path>...
 
-I.e. invoked with ``my_program.py file1 file2 --path=./here
---path=./there`` the returned dict will contain ``args['<file>'] ==
-['file1', 'file2']`` and ``args['--path'] == ['./here', './there']``.
+也就是说，调用 ``my_program.py file1 file2 --path=./here --path=./there`` 返回的字典内容将包含
+``args['<file>'] == ['file1', 'file2']`` 和 ``args['--path'] == ['./here', './there']``。
 
 
 Option descriptions format
