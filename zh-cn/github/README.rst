@@ -216,8 +216,8 @@ putting help message in the module docstrings.
 
 每个模式可以由以下元素组成:
 
-- **<arguments>**, **ARGUMENTS**. 参数被指定为大写字母，例如: ``my_program.py CONTENT-PATH``
-  或者由尖括号包围的词: ``my_program.py <content-path>``。
+- **<arguments>**, **ARGUMENTS**. 参数被指定为大写字母，例如： ``my_program.py CONTENT-PATH``
+  或者由尖括号包围的词： ``my_program.py <content-path>``。
 - **--options**. 选项是由用破折号(``-``)起始的单词，例如：``--output``, ``-o``。
   您可以 "堆叠" 几个单字母选项，例如：``-oiv``，这与 ``-o -i -v`` 相同。
   选项可以有参数，例如：``--input=FILE`` 或 ``-i FILE`` 甚至 ``-iFILE``。
@@ -227,15 +227,15 @@ putting help message in the module docstrings.
 
 使用以下构造来指定模式:
 
-- **[ ]** (中括号) **可选** 元素。例如： ``my_program.py [-hvqo FILE]``
-- **( )** (小括号) **必选** 元素。所有 *未* 放在 **[ ]** 中的元素也是必需的。例如：
+- **[ ]** (中括号) **可选**元素。例如： ``my_program.py [-hvqo FILE]``
+- **( )** (小括号) **必选**元素。所有 *未* 放在 **[ ]** 中的元素也是必需的。例如：
   ``my_program.py --path=<path> <file>...`` 与 ``my_program.py (--path=<path> <file>...)`` 相同。
-  （注意， "required options" 对于使用者来说可能不是一个好用法）。
-- **|** (竖) **互斥** 元素。 如果需要互斥元素至少实现一个，则使用 **( )** 分组：
+  （注意， "必选选项" 对于使用者来说可能不是一个好用法）。
+- **|** (竖线) **互斥**元素。 如果需要互斥元素至少实现一个，则使用 **( )** 分组：
   ``my_program.py (--clockwise | --counter-clockwise) TIME``。
   如果不需要互斥元素都实现，则使用 **[ ]** 对它们进行分组：
   ``my_program.py [--left | --right]``。
-- **...** (省略号) **一个或多个** 元素。指定可以接受任意数量的重复元素，
+- **...** (省略号) **一个或多个**元素。指定可以接受任意数量的重复元素，
   用省略号(``...``)，例如： ``my_program.py FILE ...`` 意思是接受一个或多个 ``FILE``。
   如果想要接受零个或多个元素，请用中括号(``[ ]``)，例如： ``my_program.py [FILE ...]``。
   省略号(``...``)放在表达式的左边作为一个一元运算符。
