@@ -1,4 +1,4 @@
-``docopt`` creates *beautiful* command-line interfaces
+``docopt`` 为创建 *漂亮的* 命令行界面而生
 ======================================================================
 
 .. image:: https://travis-ci.org/docopt/docopt.svg?branch=master
@@ -7,7 +7,7 @@
 .. image:: https://img.shields.io/pypi/v/docopt.svg
     :target: https://pypi.python.org/pypi/docopt
 
-Video introduction to **docopt**: `PyCon UK 2012: Create *beautiful*
+视频介绍 **docopt**: `PyCon UK 2012: Create *beautiful*
 command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
 
     New in version 0.6.1:
@@ -39,16 +39,12 @@ command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
       This allows ``docopt`` to always use the *latest* ``sys.argv``,
       not ``sys.argv`` during import time.
 
-Isn't it awesome how ``optparse`` and ``argparse`` generate help
-messages based on your code?!
+能基于您的 ``optparse`` 和 ``argparse`` 生成帮助消息(``help messages``)是不是真棒？!
 
-*Hell no!*  You know what's awesome?  It's when the option parser *is*
-generated based on the beautiful help message that you write yourself!
-This way you don't need to write this stupid repeatable parser-code,
-and instead can write only the help message--*the way you want it*.
+一定不行！您知道什么是真棒吗？是当解析器 *是通过* 您自己写的 *漂亮的* 帮助消息(``help messages``)来自动生成的时候！
+这种方式您不在需要写那些愚蠢的可重复的解析器代码，而是只需写帮助消息(``help messages``) -- *您想要的方式*。
 
-**docopt** helps you create most beautiful command-line interfaces
-*easily*:
+**docopt** 帮助您*轻松*创建最美丽的命令行界面：
 
 .. code:: python
 
@@ -77,16 +73,13 @@ and instead can write only the help message--*the way you want it*.
         arguments = docopt(__doc__, version='Naval Fate 2.0')
         print(arguments)
 
-Beat that! The option parser is generated based on the docstring above
-that is passed to ``docopt`` function.  ``docopt`` parses the usage
-pattern (``"Usage: ..."``) and option descriptions (lines starting
-with dash "``-``") and ensures that the program invocation matches the
-usage pattern; it parses options, arguments and commands based on
-that. The basic idea is that *a good help message has all necessary
-information in it to make a parser*.
+完胜！选项解析器基于上面的文档字符串(``docstrings``)生成，并传递给 ``docopt`` 方法。
+``docopt`` 解析使用模式(``"usage pattern"``)(``"Usage: ..."``)和选项描述(``option descriptions``)(以 "``-``" 开头的行)，
+并确保程序调用与使用模式(``"usage pattern"``)相匹配；能基于它来解析选项，参数和命令。
+这一切的基本想法是 *一个好的帮助消息(``help messages``)包含所有必要信息，从而生成一个解析器。*
 
-Also, `PEP 257 <http://www.python.org/dev/peps/pep-0257/>`_ recommends
-putting help message in the module docstrings.
+所以，`PEP 257 <http://www.python.org/dev/peps/pep-0257/>`_
+建议将帮助消息(``help messages``)放在模块文档字符串(``docstrings``)中。
 
 安装(Installation)
 ======================================================================
@@ -95,14 +88,14 @@ putting help message in the module docstrings.
 
     pip install docopt==0.6.2
 
-另外一种安装方式，你只需把``docopt.py``文件拖入你的项目中 --它是独立可用的。
+另外一种安装方式，您只需把``docopt.py``文件拖入您的项目中 --它是独立可用的。
 
 **docopt** 已经经过 Python 2.6, 2.7, 3.3, 3.4, 3.5 和 PyPy 的测试。
 
 测试(Testing)
 ======================================================================
 
-你可用下列命令运行单元测试:
+您可用下列命令运行单元测试:
 
     python setup.py test
 
@@ -137,7 +130,7 @@ putting help message in the module docstrings.
     """
 
 - ``argv`` 是一个可选参数向量；默认情况下，``docopt`` 使用这些参数向量传递给程序的(``sys.argv[1:]``)。
-  或者，你也可以提供一个字符串数组，例如 ``['--verbose', '-o', 'hai.txt']``。
+  或者，您也可以提供一个字符串数组，例如 ``['--verbose', '-o', 'hai.txt']``。
 
 - ``help`` 默认为 ``True``，指定解析器是否应自动打印帮助消息（如 ``doc``），然后终止程序，
   如果遇到 ``-h`` 或 ``--help`` 选项（选项应该存在于使用模式中，更多说明在下面）。
@@ -149,15 +142,15 @@ putting help message in the module docstrings.
   ``version`` 可以是任何可打印的对象，但多数是字符串，例如 ``"2.1.0rc1"``。
 
     注意：当 ``docopt`` 设置为自动处理 ``-h``， ``--help`` 和 ``--version`` 选项时，
-    你仍然需要在使用模式中输入它们才能生效。此外，也方便为你的用户了解如何使用。
+    您仍然需要在使用模式中输入它们才能生效。此外，也方便为您的用户了解如何使用。
 
 - ``options_first`` 默认为 ``False``。如果设置为 ``True`` 将不允许混序选项和位置参数。
   也就是说在第一个位置参数后，所有内容将被解释为参数，即使看起来像选项。
-  这可以严格兼容于POSIX，或者说你想要将参数分派给其他程序。
+  这可以严格兼容于POSIX，或者说您想要将参数分派给其他程序。
 
-**return** 的值是一个包含选项，参数和命令作为键的简单字典，准确拼写你的帮助消息。
+**return** 的值是一个包含选项，参数和命令作为键的简单字典，准确拼写您的帮助消息。
 选项中较长的优先作为键。
-例如，如果你调用示例为::
+例如，如果您调用示例为::
 
     naval_fate.py ship Guardian move 100 150 --speed=15
 
@@ -205,7 +198,7 @@ putting help message in the module docstrings.
 
     """
 
-``usage:`` 后面的第一个单词作为你的程序名称。你可以多次指定程序名称来表示一系列唯一用法模式:
+``usage:`` 后面的第一个单词作为您的程序名称。您可以多次指定程序名称来表示一系列唯一用法模式:
 
 .. code:: python
 
@@ -241,11 +234,11 @@ putting help message in the module docstrings.
   省略号(``...``)放在表达式的左边作为一个一元运算符。
 - **[options]** (区分大小写) 任意选项的快捷方式。
   如果在使用模式的选项描述中要指定可以提供任意已定义的选项，而不想在此都一一申明出来，就可以使用 **[options]**。
-- "``[--]``". 双短线 "``--``" 按约定用于来区分位置参数而不会被误认为是选项。要支持这个约定，在你的使用模式中添加 "``[--]``"。
+- "``[--]``". 双短线 "``--``" 按约定用于来区分位置参数而不会被误认为是选项。要支持这个约定，在您的使用模式中添加 "``[--]``"。
 - "``[-]``". 单短线 "``-``" 按约定用于表示 ``stdin`` 而不是文件。要支持这个约定，请在您的使用模式中添加 "``[-]``"。
   "``-``"作为正常命令。
 
-如果你的模式允许匹配几次无参数选项（一个标志）::
+如果您的模式允许匹配几次无参数选项（一个标志）::
 
     Usage: my_program.py [-v | -vv | -vvv]
 
@@ -259,7 +252,7 @@ putting help message in the module docstrings.
 ``args['<file>'] == ['file1', 'file2']`` 和 ``args['--path'] == ['./here', './there']``。
 
 
-Option descriptions format
+``Option descriptions`` 格式
 ----------------------------------------------------------------------
 
 **Option descriptions** consist of a list of options that you put
