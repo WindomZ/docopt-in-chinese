@@ -255,36 +255,33 @@ command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
 ``Option descriptions`` 格式
 ----------------------------------------------------------------------
 
-**Option descriptions** consist of a list of options that you put
-below your usage patterns.
+**Option descriptions** 包含了您在使用模式下面的选项列表。
 
-It is necessary to list option descriptions in order to specify:
+下列情况的选项说明(``option descriptions``)必须指定出来：
 
-- synonymous short and long options,
-- if an option has an argument,
-- if option's argument has a default value.
+- 同义的短/长选项命名，
+- 如果一个选项有一个参数，
+- 如果选项的参数有一个默认值。
 
-The rules are as follows:
+规则如下：
 
-- Every line in ``doc`` that starts with ``-`` or ``--`` (not counting
-  spaces) is treated as an option description, e.g.::
+- 在 ``doc`` 中以 ``-`` 或 ``--``(不计算空格)开头的每行都被视为选项说明(``option descriptions``)，
+  例如::
 
     Options:
       --verbose   # GOOD
       -o FILE     # GOOD
     Other: --bad  # BAD, line does not start with dash "-"
 
-- To specify that option has an argument, put a word describing that
-  argument after space (or equals "``=``" sign) as shown below. Follow
-  either <angular-brackets> or UPPER-CASE convention for options'
-  arguments.  You can use comma if you want to separate options. In
-  the example below, both lines are valid, however you are recommended
-  to stick to a single style.::
+- 若要指定该选项拥有参数，请在描述该参数的字的后面加上空格（或是 "``=``" 号），如下所示。
+  对于选项的参数，请遵循<angular-brackets>或UPPER-CASE约定。
+  如果要分隔选项，可以使用逗号。
+  在下面的示例中，这两行都是有效的，但是建议您选择使用统一的样式::
 
     -o FILE --output=FILE       # without comma, with "=" sign
     -i <file>, --input <file>   # with comma, without "=" sing
 
-- Use two spaces to separate options with their informal description::
+- 使用两个空格来分隔选项及其非正式描述::
 
     --verbose More text.   # BAD, will be treated as if verbose option had
                            # an argument "More", so use 2 spaces instead
@@ -292,17 +289,14 @@ The rules are as follows:
     -o FILE   Output file. # GOOD
     --stdout  Use stdout.  # GOOD, 2 spaces
 
-- If you want to set a default value for an option with an argument,
-  put it into the option-description, in form ``[default:
-  <my-default-value>]``::
+- 如果要为带有参数的选项设置默认值，请将其放在选项描述中，格式为 ``[default: <my-default-value>]``::
 
     --coefficient=K  The K coefficient [default: 2.95]
     --output=FILE    Output file [default: test.txt]
     --directory=DIR  Some directory [default: ./]
 
-- If the option is not repeatable, the value inside ``[default: ...]``
-  will be interpreted as string.  If it *is* repeatable, it will be
-  splited into a list on whitespace::
+- 如果选项不可重复，则 ``[default: ...]`` 中的值将被解释为字符串。
+  如果它 *是* 可重复的，它将被分成一个列表并以空白间隔::
 
     Usage: my_program.py [--repeatable=<arg> --repeatable=<arg>]
                          [--another-repeatable=<arg>]...
@@ -317,7 +311,7 @@ The rules are as follows:
     # will be './here ./there', because it is not repeatable
     --not-repeatable=<arg>      [default: ./here ./there]
 
-Examples
+实例(Examples)
 ----------------------------------------------------------------------
 
 We have an extensive list of `examples
