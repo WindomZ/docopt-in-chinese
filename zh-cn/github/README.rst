@@ -265,7 +265,7 @@ command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
 
 规则如下：
 
-- 在 ``doc`` 中以 ``-`` 或 ``--``(不计算空格)开头的每行都被视为选项说明(``option descriptions``)，
+- 在 ``doc`` 中以 ``-`` 或 ``--`` （不计算空格）开头的每行都被视为选项说明(``option descriptions``)，
   例如::
 
     Options:
