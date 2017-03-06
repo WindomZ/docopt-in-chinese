@@ -27,9 +27,9 @@
 
 #### [目录: ](https://github.com/WindomZ/docopt-in-chinese/tree/master/zh-cn)
 
-- [GitHub - README 中文翻译(完成40％)](https://github.com/WindomZ/docopt-in-chinese/tree/master/zh-cn/github/README.rst)
+- [GitHub - README 中文翻译(完成70％)](https://github.com/WindomZ/docopt-in-chinese/tree/master/zh-cn/github/README.rst)
 
-    [![](https://img.shields.io/badge/Chinese-40%25-green.svg)](https://github.com/WindomZ/docopt-in-chinese/tree/master/zh-cn/github/README.rst)
+    [![](https://img.shields.io/badge/Chinese-70%25-green.svg)](https://github.com/WindomZ/docopt-in-chinese/tree/master/zh-cn/github/README.rst)
 
 - [Website - HTML 中文翻译(完成0％)]()
 
