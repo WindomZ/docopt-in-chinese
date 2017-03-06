@@ -339,26 +339,23 @@ command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
 <https://github.com/docopt/docopt/tree/master/examples/validation_example.py>`_
 可以知道它使用 **schema** 来验证数据并向用户报告错误。
 
-Using docopt with config-files
+通过文件配置 **docopt** (Using docopt with config-files)
 ----------------------------------------------------------------------
 
-Often configuration files are used to provide default values which
-could be overriden by command-line arguments.  Since **docopt**
-returns a simple dictionary it is very easy to integrate with
-config-files written in JSON, YAML or INI formats.
-`config_file_example.py <examples/config_file_example.py>`_ provides
-and example of how to use **docopt** with JSON or INI config-file.
+通常配置文件用于提供一些可以被命令行参数覆盖的默认值。
+由于 **docopt** 返回一个简单的字典，它可以很容易通过JSON，YAML或INI格式编写的配置文件来集成。
+`config_file_example.py <examples/config_file_example.py>`_
+示例可以演示如何使用JSON或INI配置文件来实现 **docopt** 。
 
 
-Development
+开发(Development)
 ======================================================================
 
-We would *love* to hear what you think about **docopt** on our `issues
-page <http://github.com/docopt/docopt/issues>`_
+我们很 *乐意* 听到您在 `issues
+page <http://github.com/docopt/docopt/issues>`_ 上的对 **docopt** 的想法与建议
 
-Make pull requests, report bugs, suggest ideas and discuss
-**docopt**. You can also drop a line directly to
-<vladimir@keleshev.com>.
+提出代码贡献请求，报告错误，建议想法和讨论 **docopt** 。
+您也可以直接发邮件给<vladimir@keleshev.com>。
 
 Porting ``docopt`` to other languages
 ======================================================================
