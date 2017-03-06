@@ -311,38 +311,33 @@ command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
     # will be './here ./there', because it is not repeatable
     --not-repeatable=<arg>      [default: ./here ./there]
 
-实例(Examples)
+范例(Examples)
 ----------------------------------------------------------------------
 
-We have an extensive list of `examples
-<https://github.com/docopt/docopt/tree/master/examples>`_ which cover
-every aspect of functionality of **docopt**.  Try them out, read the
-source if in doubt.
+我们有一个丰富的 `examples
+<https://github.com/docopt/docopt/tree/master/examples>`_ 列表，
+里面涵盖了 **docopt** 的每一个项功能。您可以试用它们，如果有疑问，可以阅读源代码。
 
-Subparsers, multi-level help and *huge* applications (like git)
+子程序，多级帮助和巨大的应用程序（如git）
 ----------------------------------------------------------------------
 
-If you want to split your usage-pattern into several, implement
-multi-level help (with separate help-screen for each subcommand),
-want to interface with existing scripts that don't use **docopt**, or
-you're building the next "git", you will need the new ``options_first``
-parameter (described in API section above). To get you started quickly
-we implemented a subset of git command-line interface as an example:
+如果您要将使用模式拆分为几个，实现多级帮助（每个子命令都有单独的帮助屏幕），
+想要接入不使用 **docopt** 的现有脚本，或者您正在构建下一个"git"，
+那么新建 ``options_first`` 参数（如上面的API部分所述）可以帮助您。
+为了让您快速入门，我们实现了一个git命令行界面的子集作为示例：
 `examples/git
 <https://github.com/docopt/docopt/tree/master/examples/git>`_
 
 
-Data validation
+数据验证(Data validation)
 ----------------------------------------------------------------------
 
-**docopt** does one thing and does it well: it implements your
-command-line interface.  However it does not validate the input data.
-On the other hand there are libraries like `python schema
-<https://github.com/halst/schema>`_ which make validating data a
-breeze.  Take a look at `validation_example.py
+**docopt** 去做一件事，并能做得很好：它实现您的命令行界面。然而它不会验证输入数据。
+另一方面也有一些库比如 `python schema
+<https://github.com/halst/schema>`_ 会使验证数据轻而易举。
+通过源码分析 `validation_example.py
 <https://github.com/docopt/docopt/tree/master/examples/validation_example.py>`_
-which uses **schema** to validate data and report an error to the
-user.
+可以知道它使用 **schema** 来验证数据并向用户报告错误。
 
 Using docopt with config-files
 ----------------------------------------------------------------------
