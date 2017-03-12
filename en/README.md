@@ -1,9 +1,9 @@
 # docopt
 
-## [github](https://github.com/docopt/docopt)
+## [GitHub](https://github.com/docopt/docopt)
 
-Open source in Github
+Open source in [GitHub](https://github.com/docopt/docopt)
 
-## [website](http://docopt.org/)
+## [Website](http://docopt.org/)
 
-Official website and documents
+Official [Website](http://docopt.org/) and documents
